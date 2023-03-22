@@ -225,9 +225,11 @@ margin-right: 15px;
   
   .play-button-div:before {
     content: "\f01d";
+
     font-family: FontAwesome;
-    color: #0080ff;
-    background-color: #fff;
+    color: #ffa600;
+    background-color: #ffffff41;
+    background: rgba(0,0,0,0.4);
     font-size: 20px;
     padding: .05em .2em;
     position: absolute;
