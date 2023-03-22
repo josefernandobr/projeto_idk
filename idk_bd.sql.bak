@@ -1,0 +1,86 @@
+CREATE TABLE assinatura (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  Clientes_id INTEGER UNSIGNED NOT NULL,
+  TipoAssnatura_id INTEGER UNSIGNED NOT NULL,
+  FormaPagamentoId INTEGER UNSIGNED NOT NULL,
+  DataInicio DATETIME NOT NULL,
+  DataFim DATETIME NOT NULL,
+  TotalPago FLOAT NOT NULL,
+  NumParcelas INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY(id),
+  INDEX assinatura_FKIndex2(FormaPagamentoId),
+  INDEX assinatura_FKIndex2(TipoAssnatura_id),
+  INDEX assinatura_FKIndex3(Clientes_id)
+);
+
+CREATE TABLE Avaliacao (
+  Clientes_id INTEGER UNSIGNED NOT NULL,
+  conteudo_id INTEGER UNSIGNED NOT NULL,
+  nota INTEGER UNSIGNED NOT NULL,
+  DATAavaliacao DATE NOT NULL,
+  PRIMARY KEY(Clientes_id, conteudo_id),
+  INDEX Clientes_has_conteudo_FKIndex1(Clientes_id),
+  INDEX Clientes_has_conteudo_FKIndex2(conteudo_id)
+);
+
+CREATE TABLE Clientes (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  nome CHAR(100) NOT NULL,
+  email CHAR(100) NOT NULL,
+  senha CHAR(100) NOT NULL,
+  DataEntrada DATETIME NOT NULL,
+  aniversario DATE NOT NULL,
+  LinkPerfil CHAR(200) NOT NULL,
+  pais CHAR(100) NOT NULL,
+  foto CHAR(200) NOT NULL,
+  cartao CHAR(50) NOT NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE conteudo (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  TipoConteudo_id INTEGER UNSIGNED NOT NULL,
+  nome CHAR NOT NULL,
+  artista CHAR NOT NULL,
+  genero CHAR NOT NULL,
+  duracao FLOAT NOT NULL,
+  album_picture CHAR NOT NULL,
+  audio CHAR NOT NULL,
+  PRIMARY KEY(id),
+  INDEX conteudo_FKIndex1(TipoConteudo_id)
+);
+
+CREATE TABLE FormaPagamento (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  descricao CHAR NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE playlist (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  Clientes_id INTEGER UNSIGNED NOT NULL,
+  ConteudoId INTEGER UNSIGNED NULL,
+  PRIMARY KEY(id),
+  INDEX playlist_FKIndex1(Clientes_id)
+);
+
+CREATE TABLE playlist_has_conteudo (
+  playlist_id INTEGER UNSIGNED NOT NULL,
+  conteudo_id INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY(playlist_id, conteudo_id),
+  INDEX playlist_has_conteudo_FKIndex1(playlist_id),
+  INDEX playlist_has_conteudo_FKIndex2(conteudo_id)
+);
+
+CREATE TABLE TipoAssnatura (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  descricao CHAR NOT NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE TipoConteudo (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  descricao CHAR NOT NULL,
+  PRIMARY KEY(id)
+);
+
