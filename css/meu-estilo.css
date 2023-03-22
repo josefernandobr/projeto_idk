@@ -247,4 +247,5 @@ margin-right: 15px;
     opacity: .6;
   }
 
+  audio { width: 200px; height: 40px; display: block; margin:20px; }
   

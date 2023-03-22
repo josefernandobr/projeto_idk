@@ -70,9 +70,9 @@
                             <th style="width:200px">Albúm</th>
                             <th style="width:200px">Artista</th>
                             <th style="width:200px">Faixa</th>
-                            <th style="width:200px">duração</th>
-                            <th style="width:200px">atribuir nota</th>
-                            <th style="width:200px">playlist</th>
+                            <!-- <th style="width:200px">duração</th> -->
+                            <th style="width:200px">Nota</th>
+                            <th style="width:200px"></th>
                         </tr>
                     </thead>
                     
@@ -83,7 +83,7 @@
                                     <div class="module-dummy"></div>
                                     <div class="module-body">
                                         <a href=" #">
-                                        <div class="play-button-div">
+                                        <div>
                                         <img src="https://images-az.suamusica.com.br/DPib2jE0NSi20flgN7mgttFgt5s=/500x500/filters:format(webp)/507396/3714212/cd_cover.jpg" width="150" height="150" class="center-block" >
                                         </div>
                                         </a>
@@ -92,7 +92,7 @@
                                 </td>
                             <td>Renanzin Pressão</td>
                             <td>Quando o sol raiar</td>
-                            <td>1:55</td>
+                            <!-- <td>1:55</td> -->
                             <td>
                                 <form class="rating">
                                     <label>
@@ -131,16 +131,7 @@
                             </td>
 
                             <!-- <td><button type="submit" class="btn btn-light">Enviar</button></td> -->
-                            <td>
-
-                            <form>
-                            <select name="playlist" id="playlist">
-                                <option>não</option>
-                                <option>sim</option>
-                            </select></form>
-
-
-                            </td>
+                            <td><audio src="audio/quando_o_sol_chegar.mp3" controls autoplay loop></audio></td>
 
                         </tr>
 
@@ -150,7 +141,7 @@
                                 <div class="module-dummy"></div>
                                 <div class="module-body">
                                     <a href=" #">
-                                    <div class="play-button-div">
+                                    <div >
                                     <img src="https://images-americanas.b2w.io/produtos/01/00/item/111574/0/111574091_1GG.jpg" width="150" height="150" class="center-block" >
                                     </div>
                                     </a>
@@ -159,7 +150,7 @@
                             </td>
                             <td>Galinha pintadinha</td>
                             <td>Galinha pintadinha 2</td>
-                            <td>2:27</td>
+                            <!-- <td>2:27</td> -->
                             <td>
                                 <form class="rating">
                                     <label>
@@ -196,17 +187,7 @@
 
                             </td>
 
-                            <td>
-
-                            <form>
-                            <select name="playlist" id="playlist">
-                                <option>não</option>
-                                <option>sim</option>
-                            </select></form>
-
-
-                                </td>
-
+                            <td><audio src="audio/galinha_pintadinha.mp3" controls autoplay loop></audio></td>
                         </tr>
 
                         <tr>
@@ -215,7 +196,7 @@
                                 <div class="module-dummy"></div>
                                 <div class="module-body">
                                     <a href=" #">
-                                    <div class="play-button-div">
+                                    <div>
                                         <img src="https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-22/soundtrack/common/f22-soundtrack-fifa.jpg.adapt.crop16x9.320w.jpg" width="150" height="150" class="center-block" >
                                     </div>
                                     </a>
@@ -224,7 +205,7 @@
                             </td>
                             <td>Public Order</td>
                             <td>Feels Like Summer</td>
-                            <td>2:45</td>
+                            <!-- <td>2:45</td> -->
                             <td>
                             <form class="rating">
                                 <label>
@@ -260,23 +241,15 @@
                             </form>
                             </td>
 
-                            <td>
-
-                            <form>
-                            <select name="playlist" id="playlist">
-                                <option>não</option>
-                                <option>sim</option>
-                            </select></form>
-
-
-</td>
+                            <td><audio src="audio/feels_like_summer.mp3" controls autoplay loop></audio></td>
                             
                         </tr>
 
 
 
                     </tbody>
-                </table><input type="submit" class="btn btn-primary btn-md" value="Enviar alterações" id="idBtnLogin">
+                </table>
+                <!-- <input type="submit" class="btn btn-primary btn-md" value="Enviar notas" id="idBtnLogin"> -->
 
                 </div>
 
