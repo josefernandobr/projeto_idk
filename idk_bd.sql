@@ -42,12 +42,12 @@ CREATE TABLE Clientes (
 CREATE TABLE conteudo (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   TipoConteudo_id INTEGER UNSIGNED NOT NULL,
-  nome CHAR NOT NULL,
-  artista CHAR NOT NULL,
-  genero CHAR NOT NULL,
+  nome CHAR(255) NOT NULL,
+  artista CHAR(255) NOT NULL,
+  genero CHAR(255) NOT NULL,
   duracao FLOAT NOT NULL,
-  album_picture CHAR NOT NULL,
-  audio CHAR NOT NULL,
+  album_picture CHAR(255) NOT NULL,
+  audio CHAR(255) NOT NULL,
   PRIMARY KEY(id),
   INDEX conteudo_FKIndex1(TipoConteudo_id)
 );
@@ -142,6 +142,18 @@ insert into avaliacao (Clientes_id, conteudo_id,nota,DATAavaliacao)VALUES(1,2,2,
 insert into avaliacao (Clientes_id, conteudo_id,nota,DATAavaliacao)VALUES(2,2,5,'2022-09-01');
 insert into avaliacao (Clientes_id, conteudo_id,nota,DATAavaliacao)VALUES(3,3,4,'2022-10-01');
 
+insert into conteudo (TipoConteudo_id,nome,artista,genero,duracao,album_picture,audio)VALUES(1,'Quando o sol chegar','Renanzin Pressão','piseiro',2.5,
+'https://images-az.suamusica.com.br/DPib2jE0NSi20flgN7mgttFgt5s=/500x500/filters:format(webp)/507396/3714212/cd_cover.jpg',
+'audio/quando_o_sol_chegar.mp3');
+
+insert into conteudo (TipoConteudo_id,nome,artista,genero,duracao,album_picture,audio)VALUES(1,'Galinha Pintadinha','Galinha Pintadinha 2','infantil',2.5,
+'https://images-americanas.b2w.io/produtos/01/00/item/111574/0/111574091_1GG.jpg',
+'audio/galinha_pintadinha.mp3');
+
+insert into conteudo (TipoConteudo_id,nome,artista,genero,duracao,album_picture,audio)VALUES(1,'Public Order','Feels Like Summer','alternativo',2.5,
+'https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-22/soundtrack/common/f22-soundtrack-fifa.jpg.adapt.crop16x9.320w.jpg',
+'audio/feels_like_summer.mp3');
+
 insert into assinatura  (Clientes_id,TipoAssnatura_id,FormaPagamentoId,DataInicio,DataFim,TotalPago,NumParcelas)
 VALUES(1,1,1,'2021-01-01','9999-01-01',0,0);
 
@@ -151,7 +163,11 @@ VALUES(2,1,1,'2021-01-01','9999-01-01',0,0);
 insert into assinatura  (Clientes_id,TipoAssnatura_id,FormaPagamentoId,DataInicio,DataFim,TotalPago,NumParcelas)
 VALUES(2,1,1,'2021-01-01','9999-01-01',0,0);
 
-drop table clientes;
+drop table conteudo;
+
+UPDATE clientes 
+SET foto='https://static.generated.photos/vue-static/face-generator/landing/wall/20.jpg'
+WHERE nome='Carlos da Silva';
 
 
-select * from clientes t ;
+select * from conteudo c  ;
