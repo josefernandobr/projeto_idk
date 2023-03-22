@@ -1,7 +1,6 @@
 <?php  
 
     session_start();
-    // $_SESSION['superhero'] = "batman";
 
     include('connection.php');  
 
